@@ -18,4 +18,5 @@ outputs/
 parity_refs/
 
 # HH
-_rez_build
+# keep the slash at the end of _rez_build
+_rez_build/
