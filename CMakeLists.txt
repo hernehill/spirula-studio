@@ -66,8 +66,12 @@ include(SsChecks)
 message(STATUS "spirula_studio configured (backend: ${SS_BACKEND}).")
 
 
-# To make REZ happy
-install(
-    FILES LICENSE
-    DESTINATION .
+# Rez install rules
+include(GNUInstallDirs)
+
+install(TARGETS spirula
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}   # -> <prefix>/bin
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 )
+
+install(FILES LICENSE DESTINATION .)

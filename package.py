@@ -36,7 +36,7 @@ variants = [
 
 def commands():
     env.REZ_SPIRULA_ROOT = '{root}'
-    env.PATH.append('{root}')
+    env.PATH.append('{root}/bin')
 
 
 uuid = 'repository.spirula-studio'
