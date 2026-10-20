@@ -64,3 +64,10 @@ include(SsPackage)
 include(SsChecks)
 
 message(STATUS "spirula_studio configured (backend: ${SS_BACKEND}).")
+
+
+# To make REZ happy
+install(
+    FILES LICENSE
+    DESTINATION .
+)

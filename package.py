@@ -12,6 +12,9 @@ with scope('config') as c:
     import os
     c.release_packages_path = os.environ['HH_REZ_REPO_RELEASE_EXT']
     c.plugins.release_hook.hh_emailer.recipients = []
+
+    # This package will ignore build_* nativaley.
+    # So, if we use our _rez_build default, the build will fail.
     c.build_directory = "build_rez"
 
 requires = [
