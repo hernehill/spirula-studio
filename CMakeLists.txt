@@ -69,9 +69,19 @@ message(STATUS "spirula_studio configured (backend: ${SS_BACKEND}).")
 # Rez install rules
 include(GNUInstallDirs)
 
-install(TARGETS spirula
-    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}   # -> <prefix>/bin
-    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-)
+# install(TARGETS spirula
+#     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}   # -> <prefix>/bin
+#     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+# )
 
-install(FILES LICENSE DESTINATION .)
+install(DIRECTORY ${CMAKE_BINARY_DIR}/
+    DESTINATION ${CMAKE_INSTALL_BINDIR}
+    USE_SOURCE_PERMISSIONS
+    PATTERN "Makefile"        EXCLUDE
+    PATTERN "CMakeFiles"      EXCLUDE
+    PATTERN "*.rxt"           EXCLUDE
+    PATTERN "CMakeCache.txt"  EXCLUDE
+    PATTERN "*.cmake"         EXCLUDE
+    PATTERN "_deps"           EXCLUDE
+    PATTERN "slang-*"         EXCLUDE
+)

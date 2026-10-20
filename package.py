@@ -1,6 +1,6 @@
 name = 'spirula'
 
-version = '2026.10.16.hh.1.0.0'
+version = '2026.10.16.hh.1.0.1'
 
 authors = [
     'Harry (J.X.) C.',
