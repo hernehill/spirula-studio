@@ -12,6 +12,7 @@ with scope('config') as c:
     import os
     c.release_packages_path = os.environ['HH_REZ_REPO_RELEASE_EXT']
     c.plugins.release_hook.hh_emailer.recipients = []
+    c.build_directory = "build_rez"
 
 requires = [
     "vulkanSDK",
